@@ -1,6 +1,6 @@
 /**
  * 簡易 TodoList — 記憶體版
- * 支援 add / list / complete / remove，每筆 id 自動遞增
+ * 支援 add / list / complete / remove / listByStatus，每筆 id 自動遞增
  */
 class TodoList {
   constructor() {
@@ -33,6 +33,20 @@ class TodoList {
     if (idx === -1) throw new Error('Todo not found')
     this._items.splice(idx, 1)
     return true
+  }
+
+  /**
+   * 依完成狀態篩選 todo（淺拷貝）
+   * @param {boolean} completed - true 回傳已完成，false 回傳未完成
+   * @returns {Array}
+   */
+  listByStatus(completed) {
+    if (typeof completed !== 'boolean') {
+      throw new Error('completed must be a boolean')
+    }
+    return this._items
+      .filter(i => i.completed === completed)
+      .map(i => ({ ...i }))
   }
 
   /** @private */
