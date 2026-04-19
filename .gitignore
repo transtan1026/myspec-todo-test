@@ -1,1 +1,4 @@
 node_modules/
+.myspec/active/
+.myspec/changes/
+!.myspec/config.yaml

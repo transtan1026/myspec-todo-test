@@ -1,0 +1,7 @@
+project: myspec-todo-test
+author: transtan1026
+created: 2026-04-19
+slug_style: kebab-case
+default_branch: main
+gitignore_strategy: A
+auto_push_archive: false
